@@ -1,0 +1,13 @@
+{
+  "name": "Dev Leader | @devleader",
+  "short_name": "@devleader",
+  "description": "Principal Software Engineering Manager at Microsoft. Content creator, educator, and software engineering enthusiast.",
+  "start_url": "/",
+  "display": "standalone",
+  "lang": "en_US",
+  "theme_color": "#1a1a2e",
+  "background_color": "#1a1a2e",
+  "icons": [
+    {"src": "https://github.com/ncosentino.png", "sizes": "any", "type": "image/png"}
+  ]
+}

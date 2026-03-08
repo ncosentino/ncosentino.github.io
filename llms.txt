@@ -1,0 +1,79 @@
+# Dev Leader
+
+> Principal Software Engineering Manager at Microsoft. Views are my own.
+
+## Who is Dev Leader
+Nick Cosentino, known as Dev Leader, is a Principal Software Engineering Manager at Microsoft and a prolific content creator focused on C#, .NET, software architecture, design patterns, and engineering career growth. He publishes a weekly newsletter on devleader.ca, runs multiple YouTube channels and a podcast, and has built a combined audience exceeding 85,000 followers across LinkedIn, YouTube, Substack, and other platforms. Nick is known for making complex software engineering concepts approachable for developers at all levels.
+
+Principal Software Engineering Manager at Microsoft. Content creator, educator, and software engineering enthusiast.
+
+## Links
+- [FREE weekly newsletter!](https://devleaderweekly.substack.com)
+- [Website](https://www.devleader.ca)
+- [BrandGhost – The better way to engage on social media](https://www.brandghost.ai)
+- [The Dev Leader Podcast](https://podcasts.apple.com/us/podcast/dev-leader-podcast/id1764207822)
+- [Code Commute Podcast](https://open.spotify.com/show/3wud5lM4SaSY8nkKj1KW29)
+- [All of my Courses](https://www.devleader.ca/courses)
+- [Digital Products](https://products.devleader.ca)
+- [Management &amp; Leadership Consult - 30 mins](https://tidycal.com/nbcosentino/management-and-leadership-consult-30-mins)
+- [Management &amp; Leadership Consult - 60 mins](https://tidycal.com/nbcosentino/management-and-leadership-consult-60-mins)
+- [Newsletter + Private Discord Access!](https://weekly.devleader.ca/subscribe)
+- [Join the Private Discord Server!](https://sidestack.io/devleader)
+- [Substack](https://devleaderweekly.substack.com)
+- [Medium](https://medium.com/@devleaderca)
+- [Hashnode](https://hashnode.devleader.ca/)
+- [HackerNoon](https://hackernoon.com/u/devleader)
+- [Dev.to](https://dev.to/devleader)
+- [DZone](https://dzone.com/users/1170995/ncosentino.html)
+- [Quora](https://devleader.quora.com/)
+- [GitHub](https://github.com/ncosentino)
+- [Stack Overflow](https://stackoverflow.com/users/2704424/dev-leader)
+- [Needlr](https://github.devleader.ca/needlr/)
+- [Google Search Console MCP](https://github.devleader.ca/google-search-console-mcp/)
+- [Google Keyword Planner MCP](https://github.devleader.ca/google-keyword-planner-mcp/)
+- [Google PageSpeed Insights MCP](https://github.devleader.ca/google-psi-mcp/)
+- [Narnia](https://github.devleader.ca/narnia/)
+- [Homebase](https://github.devleader.ca/homebase/)
+
+## About
+Dev Leader (Nick Cosentino) is a Principal Software Engineering Manager at Microsoft, content creator, and software engineering educator sharing knowledge about software development, C#, .NET, and technology.
+
+## Social Profiles
+- : https://www.youtube.com/@devleader?sub_confirmation=1
+- : https://devleaderweekly.substack.com
+- : https://podcasts.apple.com/us/podcast/dev-leader-podcast/id1764207822
+- : https://tiktok.com/@devleader
+- : https://linkedin.com/in/nickcosentino
+- : https://x.com/devleaderca
+- : https://instagram.com/dev.leader
+- : https://www.threads.com/@dev.leader
+- : https://www.twitch.tv/devleaderca
+- : https://kick.com/devleader
+- : https://www.github.com/ncosentino
+- : https://bsky.app/profile/devleader.ca
+- : https://hachyderm.io/@devleader
+- : https://facebook.com/devleaderca
+- : https://pinterest.com/ncosentino
+
+
+## Topics
+- C# and .NET development
+- Software engineering management
+- Dependency injection and software architecture
+- Design patterns
+- Performance optimization
+- Career growth in software engineering
+- Open source development
+
+
+## Content Formats
+- Blog articles (devleader.ca)
+- Weekly newsletter (Substack)
+- YouTube videos
+- Podcasts (Dev Leader Podcast, Code Commute)
+- Live coding streams (Twitch/Kick)
+- Short-form video (TikTok, Instagram Reels)
+
+
+## Audience
+Software engineers and developers at all levels interested in C#, .NET, software architecture, and engineering career growth. Also targets engineering managers and technical leaders.

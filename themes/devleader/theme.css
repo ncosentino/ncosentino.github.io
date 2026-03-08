@@ -1,0 +1,45 @@
+/* ─────────────────────────────────────────────────────────────────────────
+   theme: devleader
+   Solid blue — matches the Dev Leader Linktree aesthetic.
+   ───────────────────────────────────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500;600;700&display=swap');
+
+:root {
+  /* Background — solid medium blue */
+  --bg-color: #4B8FDB;
+  --bg-gradient: none;
+
+  /* Typography */
+  --font-family: 'Inter', sans-serif;
+  --name-color: #ffffff;
+  --username-color: rgba(255, 255, 255, 0.85);
+  --bio-color: #ffffff;
+
+  /* Avatar */
+  --avatar-size: 96px;
+
+  /* Section headers */
+  --section-header-color: rgba(255, 255, 255, 0.75);
+  --section-divider-color: rgba(255, 255, 255, 0.35);
+
+  /* Buttons — white fill, dark text */
+  --btn-bg: #ffffff;
+  --btn-border-width: 0px;
+  --btn-border-color: transparent;
+  --btn-text: #1a1a1a;
+  --btn-hover-bg: rgba(255, 255, 255, 0.88);
+  --btn-hover-border-color: transparent;
+  --btn-hover-text: #1a1a1a;
+  --btn-radius: 12px;
+  --btn-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+
+  /* Social icon strip */
+  --social-icon-color: #ffffff;
+  --social-icon-hover: rgba(255, 255, 255, 0.7);
+
+  /* Focus ring */
+  --focus-ring: rgba(255, 255, 255, 0.5);
+
+  /* Video */
+  --video-radius: 12px;
+}
