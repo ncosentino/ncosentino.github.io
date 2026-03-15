@@ -1,0 +1,57 @@
+User-agent: *
+Allow: /
+
+# ── AI Search & Citation Crawlers (explicitly welcomed) ──────────────────────
+# These crawlers index content for AI-powered search and citation engines.
+# Allowing them maximizes discoverability in AI answer engines (Perplexity,
+# ChatGPT Browse, Google AI Overviews, Claude, etc.).
+# Source: github.com/ai-robots-txt/ai.robots.txt
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PhindBot
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+# ── Sitemaps & LLM-friendly content ─────────────────────────────────────────
+Sitemap: https://github.devleader.ca/sitemap.xml
+
+# LLM-friendly content files:
+# Structured summary:  https://github.devleader.ca/llms.txt
+# Full page content:   https://github.devleader.ca/llms-full.txt

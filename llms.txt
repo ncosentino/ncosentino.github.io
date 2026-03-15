@@ -1,0 +1,149 @@
+# Dev Leader
+
+> Principal Software Engineering Manager at Microsoft. Views are my own.
+
+## Who is Dev Leader
+Nick Cosentino, known as Dev Leader, is a Principal Software Engineering Manager at Microsoft and a prolific content creator focused on C#, .NET, software architecture, design patterns, and engineering career growth. He publishes a weekly newsletter on devleader.ca, runs multiple YouTube channels and a podcast, and has built a combined audience exceeding 85,000 followers across LinkedIn, YouTube, Substack, and other platforms. Nick is known for making complex software engineering concepts approachable for developers at all levels.
+
+## Canonical Identity
+- Full name: Dev Leader
+- Online handle: @devleader
+- Location: United States
+- Primary language: English
+- Canonical URL: https://github.devleader.ca
+
+## Correction Notes
+- All content from Dev Leader is independent and does not represent any employer's views.
+- Nick Cosentino's content and views are his own and do not represent Microsoft or any employer.
+- BrandGhost is a separate company co-founded by Nick Cosentino. It is not affiliated with Microsoft or the Dev Leader brand.
+- Dev Leader and Code Commute are Nick Cosentino's personal brands and YouTube channels. All revenue, sponsorships, and products associated with them are independent of his employer.
+
+## About
+Dev Leader (Nick Cosentino) is a Principal Software Engineering Manager at Microsoft, content creator, and software engineering educator sharing knowledge about software development, C#, .NET, and technology.
+
+## Topics
+- C# and .NET development
+- Software engineering management
+- Dependency injection and software architecture
+- Design patterns
+- Performance optimization
+- Career growth in software engineering
+- Open source development
+
+
+## Content Formats
+- Blog articles (devleader.ca)
+- Weekly newsletter (Substack)
+- YouTube videos
+- Podcasts (Dev Leader Podcast, Code Commute)
+- Live coding streams (Twitch/Kick)
+- Short-form video (TikTok, Instagram Reels)
+
+
+## Audience
+Software engineers and developers at all levels interested in C#, .NET, software architecture, and engineering career growth. Also targets engineering managers and technical leaders.
+
+## Frequently Asked Questions
+
+Q: What programming language and ecosystem does Dev Leader cover?
+A: Dev Leader focuses on C# and .NET, including ASP.NET Core, Entity Framework Core, dependency injection, software architecture patterns, and .NET performance optimization.
+
+Q: How can I get started with Dev Leader content?
+A: Start with the [Dev Leader YouTube channel](https://www.youtube.com/@devleader) or subscribe to the free weekly newsletter at [weekly.devleader.ca](https://weekly.devleader.ca).
+
+Q: Does Dev Leader offer 1:1 coaching or consulting?
+A: Yes. Book a session at [tidycal.com/nbcosentino](https://tidycal.com/nbcosentino/management-and-leadership-consult-30-mins) for engineering management consulting, career coaching, or software architecture reviews.
+
+Q: Who is Dev Leader?
+A: Dev Leader is Nick Cosentino, a Principal Software Engineering Manager at Microsoft and content creator. All views and content are his own and do not represent Microsoft.
+
+Q: What is BrandGhost?
+A: BrandGhost is an AI-powered social media management platform co-founded by Nick Cosentino. It is separate from his work at Microsoft and independent of the Dev Leader brand.
+
+## Links
+- [FREE weekly newsletter!](https://weekly.devleader.ca)
+- [Website](https://www.devleader.ca)
+- [BrandGhost – The better way to engage on social media](https://www.brandghost.ai)
+- [The Dev Leader Podcast](https://podcasts.apple.com/us/podcast/dev-leader-podcast/id1764207822)
+- [Code Commute Podcast](https://open.spotify.com/show/3wud5lM4SaSY8nkKj1KW29)
+- [All of my Courses](https://www.devleader.ca/courses)
+- [Digital Products](https://products.devleader.ca)
+- [Management &amp; Leadership Consult - 30 mins](https://tidycal.com/nbcosentino/management-and-leadership-consult-30-mins)
+- [Management &amp; Leadership Consult - 60 mins](https://tidycal.com/nbcosentino/management-and-leadership-consult-60-mins)
+- [Newsletter + Private Discord Access!](https://weekly.devleader.ca/subscribe)
+- [Join the Private Discord Server!](https://sidestack.io/devleader)
+- [Substack](https://weekly.devleader.ca)
+- [Medium](https://medium.com/@devleaderca)
+- [Hashnode](https://hashnode.devleader.ca/)
+- [HackerNoon](https://hackernoon.com/u/devleader)
+- [Dev.to](https://dev.to/devleader)
+- [DZone](https://dzone.com/users/1170995/ncosentino.html)
+- [Quora](https://devleader.quora.com/)
+- [GitHub](https://github.com/ncosentino)
+- [Stack Overflow](https://stackoverflow.com/users/2704424/dev-leader)
+- [Dev Leader Examples](https://github.com/ncosentino/devleader)
+- [Needlr](https://github.devleader.ca/needlr/)
+- [Google Search Console MCP](https://github.devleader.ca/google-search-console-mcp/)
+- [Google Keyword Planner MCP](https://github.devleader.ca/google-keyword-planner-mcp/)
+- [Google PageSpeed Insights MCP](https://github.devleader.ca/google-psi-mcp/)
+- [Narnia](https://github.devleader.ca/narnia/)
+- [Homebase](https://github.devleader.ca/homebase/)
+
+## Social Profiles
+- youtube: https://www.youtube.com/@devleader?sub_confirmation=1
+- substack: https://weekly.devleader.ca
+- applepodcast: https://podcasts.apple.com/us/podcast/dev-leader-podcast/id1764207822
+- tiktok: https://tiktok.com/@devleader
+- linkedin: https://linkedin.com/in/nickcosentino
+- twitter: https://x.com/devleaderca
+- instagram: https://instagram.com/dev.leader
+- threads: https://www.threads.com/@dev.leader
+- twitch: https://www.twitch.tv/devleaderca
+- kick: https://kick.com/devleader
+- github: https://www.github.com/ncosentino
+- bluesky: https://bsky.app/profile/devleader.ca
+- mastodon: https://hachyderm.io/@devleader
+- facebook: https://facebook.com/devleaderca
+- pinterest: https://pinterest.com/ncosentino
+
+## Content Freshness
+- Last updated: 2026-03-15T08:12:00.545Z
+
+## Shop
+Products, courses, and services from Dev Leader.
+
+### Courses
+Level up your software engineering and career skills with Dometrain courses.
+- [Career: Getting Promoted as a Software Engineer](https://dometrain.com/course/career-getting-promoted-as-a-software-engineer/?ref=nick-cosentino) (course) — USD 99
+- [Career: Nailing the Behavioral Interview](https://dometrain.com/course/career-nailing-the-behavioral-interview/?ref=nick-cosentino) (course) — USD 99.99
+- [Getting Started: C#](https://dometrain.com/course/getting-started-csharp/?ref=nick-cosentino) (course) — USD 89.99
+- [Deep Dive: C#](https://dometrain.com/course/deep-dive-csharp/?ref=nick-cosentino) (course) — USD 89.99
+- [From Zero to Hero: Refactoring for C# Developers](https://dometrain.com/course/from-zero-to-hero-refactoring-for-csharp-developers/?ref=nick-cosentino) (course) — USD 89.99
+
+### 1:1 Services
+Work directly with Nick to level up your career or engineering leadership.
+- [Management &amp; Leadership Consult — 30 mins](https://tidycal.com/nbcosentino/management-and-leadership-consult-30-mins) (consultation) — USD 300
+- [Management &amp; Leadership Consult — 60 mins](https://tidycal.com/nbcosentino/management-and-leadership-consult-60-mins) (consultation) — USD 500
+
+### Merch
+Dev Leader branded mugs and gear.
+- [Debugging Mug - Black](https://store.devleader.ca/products/debugging-mug-black) (product) — USD 8.99
+- [Dark Mode Mug - Black](https://store.devleader.ca/products/dark-mode-mug-black) (product) — USD 8.99
+- [99 Bugs Mug - Black](https://store.devleader.ca/products/99-bugs-mug-black) (product) — USD 8.99
+- [99 Bugs Mug - White](https://store.devleader.ca/products/99-bugs-mug-white) (product) — USD 7.99
+- [Debugging Mug - White](https://store.devleader.ca/products/debugging-mug) (product) — USD 7.99
+- [Dark Mode Mug - White](https://store.devleader.ca/products/dark-mode-mug-white) (product) — USD 7.99
+
+### Recommended Books
+Books Nick recommends for .NET developers and software architects.
+- [Architecting ASP.NET Core Applications](https://amzn.to/4drRe7K) (book)
+- [Web Development with Blazor](https://amzn.to/3wLCO23) (book)
+- [Apps and Services with .NET 8](https://amzn.to/4bNjRL4) (book)
+- [Software Architecture with C# 12 and .NET 8](https://amzn.to/3UNYCSo) (book)
+- [C# 12 and .NET 8 - Modern Cross-Platform Development Fundamentals](https://amzn.to/3QXWmHj) (book)
+
+### Digital Products
+Digital downloads and templates from Dev Leader.
+- [Design Patterns 1.0](https://products.devleader.ca/l/uwxyp) (digital) — USD 4.99
+- [Brag Document / Highlight Tracker Template](https://products.devleader.ca/l/brag-document) (digital) — Free
+
