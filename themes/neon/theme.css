@@ -1,0 +1,56 @@
+/* ─────────────────────────────────────────────────────────────────────────
+   theme: neon
+   Dark background with vibrant neon accent colors.
+   Font: loaded async via site.font_url in head.njk.
+   ───────────────────────────────────────────────────────────────────────── */
+
+:root {
+  /* Background */
+  --bg-color: #0d0d0d;
+  --bg-gradient: linear-gradient(180deg, #0d0d0d 0%, #1a0a2e 100%);
+
+  /* Typography */
+  --font-family: 'Inter', sans-serif;
+  --name-color: #ffffff;
+  --username-color: rgba(255, 255, 255, 0.6);
+  --bio-color: rgba(255, 255, 255, 0.85);
+
+  /* Avatar */
+  --avatar-size: 96px;
+
+  /* Section headers */
+  --section-header-color: rgba(180, 120, 255, 0.7);
+  --section-divider-color: rgba(180, 120, 255, 0.25);
+
+  /* Buttons — neon outline, hover fills with neon */
+  --neon-accent: #b47aff;
+  --btn-bg: transparent;
+  --btn-border-width: 1px;
+  --btn-border-color: var(--neon-accent);
+  --btn-text: var(--neon-accent);
+  --btn-hover-bg: var(--neon-accent);
+  --btn-hover-border-color: var(--neon-accent);
+  --btn-hover-text: #0d0d0d;
+  --btn-radius: 30px;
+
+  /* Focus ring */
+  --focus-ring: rgba(180, 120, 255, 0.5);
+
+  /* Video */
+  --video-radius: 16px;
+}
+
+.link-btn {
+  text-shadow: 0 0 8px rgba(180, 120, 255, 0.4);
+  box-shadow: 0 0 0 0 rgba(180, 120, 255, 0);
+  transition:
+    background-color 0.22s ease,
+    color 0.22s ease,
+    border-color 0.22s ease,
+    box-shadow 0.22s ease;
+}
+
+.link-btn:hover {
+  text-shadow: none;
+  box-shadow: 0 0 20px rgba(180, 120, 255, 0.35);
+}
