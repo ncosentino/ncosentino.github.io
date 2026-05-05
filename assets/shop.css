@@ -1,0 +1,274 @@
+/* ─────────────────────────────────────────────────────────────────────────
+   shop.css — styles for the optional shop tab
+   Inherits all theme variables from the active theme.css and base.css.
+   ───────────────────────────────────────────────────────────────────────── */
+
+/* Ensure [hidden] wins over display:grid / display:flex set on shop grids */
+.shop-collection-items[hidden] { display: none !important; }
+
+/* ── Page tab navigation ─────────────────────────────────────────────────── */
+.page-tabs {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--shop-tab-border, rgba(255,255,255,0.15));
+  padding-bottom: 0;
+}
+
+.tab-link {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--shop-tab-color, rgba(255,255,255,0.6));
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
+  cursor: pointer;
+}
+
+.tab-link:hover {
+  color: var(--shop-tab-active-color, #fff);
+}
+
+.tab-link.tab-active {
+  color: var(--shop-tab-active-color, #fff);
+  border-bottom-color: var(--shop-tab-active-border, var(--btn-bg, #fff));
+}
+
+/* ── Shop page wrapper ───────────────────────────────────────────────────── */
+.shop-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding-bottom: 48px;
+}
+
+/* ── Collection ──────────────────────────────────────────────────────────── */
+.shop-collection {
+  width: 100%;
+}
+
+.shop-collection-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--section-header-color, rgba(255,255,255,0.75));
+  letter-spacing: 0.01em;
+  text-align: center;
+  margin-bottom: 6px;
+}
+
+.shop-collection-desc {
+  font-size: 13px;
+  color: var(--bio-color, rgba(255,255,255,0.6));
+  text-align: center;
+  margin-bottom: 16px;
+  line-height: 1.55;
+}
+
+/* ── Collapsible section header ──────────────────────────────────────────── */
+.shop-collection-header {
+  position: relative;
+}
+
+.shop-collection-toggle {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--section-header-color, rgba(255,255,255,0.55));
+  border-radius: 6px;
+  transition: color 0.15s ease, background 0.15s ease;
+}
+
+.shop-collection-toggle:hover {
+  color: var(--section-header-color, rgba(255,255,255,0.9));
+  background: rgba(255,255,255,0.06);
+}
+
+.toggle-chevron {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.shop-collection-toggle[aria-expanded="false"] .toggle-chevron {
+  transform: rotate(-90deg);
+}
+
+/* ── Grid and list layouts ───────────────────────────────────────────────── */
+.shop-grid {
+  display: grid;
+  grid-template-columns: var(--shop-grid-cols, repeat(auto-fill, minmax(260px, 1fr)));
+  gap: 16px;
+}
+
+.shop-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ── Card ────────────────────────────────────────────────────────────────── */
+.shop-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--shop-card-bg, var(--btn-bg, #fff));
+  border-radius: var(--shop-card-radius, var(--btn-radius, 12px));
+  border: var(--shop-card-border, 1px solid rgba(255,255,255,0.1));
+  box-shadow: var(--shop-card-shadow, var(--btn-shadow, 0 2px 8px rgba(0,0,0,0.15)));
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.shop-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shop-card-shadow-hover, 0 6px 20px rgba(0,0,0,0.25));
+}
+
+.shop-card--featured {
+  order: -1;
+}
+
+/* List layout card adjustments */
+.shop-list .shop-card {
+  flex-direction: row;
+  align-items: center;
+}
+
+.shop-list .shop-card-image-wrap {
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+}
+
+.shop-list .shop-card-body {
+  flex: 1;
+}
+
+/* ── Card image ──────────────────────────────────────────────────────────── */
+.shop-card-image-wrap {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: var(--shop-image-bg, rgba(0,0,0,0.1));
+}
+
+.shop-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ── Card body ───────────────────────────────────────────────────────────── */
+.shop-card-body {
+  padding: 14px 16px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.shop-card-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--btn-text, #1a1a1a);
+  line-height: 1.3;
+}
+
+.shop-card-desc {
+  font-size: 13px;
+  color: var(--shop-desc-color, rgba(0,0,0,0.6));
+  line-height: 1.55;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ── Price ───────────────────────────────────────────────────────────────── */
+.shop-price-wrap {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.shop-price {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--shop-price-color, var(--btn-text, #1a1a1a));
+}
+
+.shop-price-original {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--shop-price-original-color, rgba(0,0,0,0.4));
+  text-decoration: line-through;
+}
+
+/* ── Badge ───────────────────────────────────────────────────────────────── */
+.shop-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: inline-block;
+  padding: 3px 9px;
+  border-radius: 99px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  background: var(--shop-badge-bg, rgba(255, 210, 60, 0.92));
+  color: var(--shop-badge-color, #1a1a1a);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ── CTA button ──────────────────────────────────────────────────────────── */
+.shop-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin: 0 16px 14px;
+  padding: 10px 16px;
+  border-radius: var(--btn-radius, 8px);
+  background: var(--btn-bg, #fff);
+  color: var(--btn-text, #1a1a1a);
+  font-size: 14px;
+  font-weight: 700;
+  border: var(--btn-border-width, 0px) solid var(--btn-border-color, transparent);
+  box-shadow: var(--btn-shadow, 0 2px 8px rgba(0,0,0,0.12));
+  transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.shop-cta:hover {
+  background: var(--btn-bg-hover, rgba(255,255,255,0.9));
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.18);
+}
+
+.shop-cta-chevron {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  opacity: 0.7;
+}

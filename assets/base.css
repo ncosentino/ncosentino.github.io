@@ -1,0 +1,921 @@
+/* ─────────────────────────────────────────────────────────────────────────
+   base.css — layout and structure (theme-agnostic)
+   All colors, fonts, and visual style come from the active theme.css.
+   ───────────────────────────────────────────────────────────────────────── */
+
+/* ── Reset ───────────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+img { display: block; max-width: 100%; }
+ul { list-style: none; }
+a { text-decoration: none; }
+
+/* ── Base ────────────────────────────────────────────────────────────────── */
+html {
+  font-family: var(--font-family, Inter, sans-serif);
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: var(--bg-gradient, var(--bg-color, #4B8FDB));
+  background-color: var(--bg-color, #4B8FDB);
+  background-attachment: fixed;
+}
+
+/* ── Page layout ─────────────────────────────────────────────────────────── */
+.page-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 64px 16px 48px;
+}
+
+.content-col {
+  width: 100%;
+  max-width: 680px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* Hero banner flush-top: remove page-wrap top padding when full-bleed hero is active */
+.banner-hero-active .page-wrap {
+  padding-top: 0;
+}
+
+/* ── Profile ─────────────────────────────────────────────────────────────── */
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+
+/* Banner hero image */
+.profile-banner-wrap {
+  width: 100%;
+  border-radius: 16px;
+  overflow: visible;
+  margin-bottom: 48px;
+  position: relative;
+}
+
+.profile-banner {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+/* Avatar overlapping bottom-center of banner */
+.avatar-over-banner {
+  position: absolute;
+  bottom: -36px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid var(--bg-color, #4B8FDB);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
+
+.avatar-wrap {
+  width: var(--avatar-size, 96px);
+  height: var(--avatar-size, 96px);
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-name {
+  color: var(--name-color, #fff);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.3;
+  text-align: center;
+}
+
+.profile-username {
+  color: var(--username-color, rgba(255,255,255,0.7));
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.profile-bio {
+  color: var(--bio-color, #fff);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  max-width: 480px;
+}
+
+/* ── Social icons strip ──────────────────────────────────────────────────── */
+.social-icons-strip {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.social-icon-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  color: var(--social-icon-color, #fff);
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.social-icon-link:hover {
+  color: var(--social-icon-hover, rgba(255,255,255,0.7));
+  transform: scale(1.15);
+}
+
+.social-icon-link svg {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+}
+
+/* ── Extended bio (SEO collapsible) ─────────────────────────────────────── */
+.bio-extended {
+  width: 100%;
+  max-width: var(--content-max-width, 640px);
+  margin-top: 12px;
+  border: var(--btn-border-width, 0px) solid var(--btn-border-color, transparent);
+  border-radius: var(--btn-radius, 12px);
+  background: var(--btn-bg, #fff);
+  box-shadow: var(--btn-shadow, 0 2px 8px rgba(0,0,0,0.15));
+  overflow: hidden;
+  font-family: var(--font-family, Inter, sans-serif);
+  transition: background-color 0.22s ease, box-shadow 0.22s ease;
+}
+
+.bio-extended-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 56px;
+  padding: 8px 16px;
+  cursor: pointer;
+  color: var(--btn-text, #1a1a1a);
+  font-size: 15px;
+  font-weight: 600;
+  font-family: var(--font-family, Inter, sans-serif);
+  list-style: none;
+  user-select: none;
+  transition: color 0.22s ease;
+}
+
+/* Hide the native disclosure triangle in all browsers */
+.bio-extended-toggle::-webkit-details-marker { display: none; }
+.bio-extended-toggle::marker { display: none; }
+
+/* Append a small chevron via pseudo-element */
+.bio-extended-toggle::after {
+  content: "↓";
+  font-size: 11px;
+  opacity: 0.45;
+  transition: transform 0.2s ease;
+  display: inline-block;
+  flex-shrink: 0;
+  margin-left: 0.75rem;
+}
+
+.bio-extended[open] .bio-extended-toggle::after {
+  transform: rotate(180deg);
+}
+
+.bio-extended-toggle:hover {
+  color: var(--btn-hover-text, #1a1a1a);
+}
+
+.bio-extended-body {
+  padding: 0.75rem 1rem 0.85rem;
+  color: var(--btn-text, #1a1a1a);
+  font-size: 0.9rem;
+  font-family: var(--font-family, Inter, sans-serif);
+  line-height: 1.65;
+  text-align: left;
+  border-top: 1px solid rgba(0,0,0,0.08);
+}
+
+/* ── Section header ──────────────────────────────────────────────────────── */
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 24px 0 12px;
+}
+
+.section-header-text {
+  color: var(--section-header-color, rgba(255,255,255,0.75));
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 0.01em;
+}
+
+/* ── Link list ───────────────────────────────────────────────────────────── */
+.link-section {
+  width: 100%;
+}
+
+.link-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.link-btn {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  min-height: 56px;
+  padding: 8px 16px 8px 8px;
+  border-radius: var(--btn-radius, 12px);
+  border: var(--btn-border-width, 0px) solid var(--btn-border-color, transparent);
+  background-color: var(--btn-bg, #fff);
+  color: var(--btn-text, #1a1a1a);
+  box-shadow: var(--btn-shadow, 0 2px 8px rgba(0,0,0,0.15));
+  font-family: var(--font-family, Inter, sans-serif);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.4;
+  cursor: pointer;
+  transition:
+    background-color 0.22s ease,
+    color 0.22s ease,
+    box-shadow 0.22s ease,
+    transform 0.22s ease;
+  overflow: hidden;
+  word-break: break-word;
+  text-align: left;
+}
+
+.link-btn:hover,
+.link-btn:focus-visible {
+  background-color: var(--btn-hover-bg, rgba(255,255,255,0.88));
+  color: var(--btn-hover-text, #1a1a1a);
+  border-color: var(--btn-hover-border-color, transparent);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  transform: scale(1.01);
+  outline: none;
+}
+
+.link-btn:focus-visible {
+  box-shadow: 0 0 0 3px var(--focus-ring, rgba(255,255,255,0.5));
+}
+
+/* Thumbnail — left side square image */
+.link-btn-thumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-right: 12px;
+}
+
+.link-btn-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Icon — left side (when no thumbnail) */
+.link-btn-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  margin-right: 12px;
+  transition: color 0.22s ease;
+}
+
+.link-btn-icon svg {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+}
+
+.link-btn-label {
+  flex: 1;
+  text-align: center;
+}
+
+/* Buttons with thumbnail: left-align the label */
+.link-btn.has-thumbnail .link-btn-label {
+  text-align: left;
+}
+
+/* Chevron — right side */
+.link-btn-chevron {
+  flex-shrink: 0;
+  margin-left: 12px;
+  display: flex;
+  align-items: center;
+  opacity: 0.45;
+}
+
+.link-btn-chevron svg {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+  fill: none;
+}
+
+/* ── Featured video ──────────────────────────────────────────────────────── */
+.featured-video {
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+.lite-youtube-wrap {
+  width: 100%;
+  border-radius: var(--video-radius, 16px);
+  overflow: hidden;
+}
+
+.lite-youtube {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 */
+  background: #000;
+  cursor: pointer;
+}
+
+.lite-youtube-link {
+  display: block;
+  position: absolute;
+  inset: 0;
+}
+
+.lite-youtube-thumb {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.2s ease;
+}
+
+.lite-youtube:hover .lite-youtube-thumb {
+  opacity: 0.8;
+}
+
+.lite-youtube-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 68px;
+  height: 48px;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.5));
+  transition: transform 0.2s ease;
+}
+
+.lite-youtube:hover .lite-youtube-play {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* When activated (JS adds .active), show iframe */
+.lite-youtube.active .lite-youtube-thumb,
+.lite-youtube.active .lite-youtube-play {
+  display: none;
+}
+
+.lite-youtube iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Featured video label */
+.video-label {
+  text-align: center;
+  color: rgba(255,255,255,0.8);
+  font-size: 13px;
+  font-weight: 500;
+  margin-top: 8px;
+}
+/* ── Portfolio cards ─────────────────────────────────────────────────────── */
+.portfolio-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.portfolio-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  width: 100%;
+  padding: 16px;
+  border-radius: var(--btn-radius, 12px);
+  border: var(--btn-border-width, 0px) solid var(--btn-border-color, transparent);
+  background-color: var(--btn-bg, #fff);
+  color: var(--btn-text, #1a1a1a);
+  box-shadow: var(--btn-shadow, 0 2px 8px rgba(0,0,0,0.15));
+  font-family: var(--font-family, Inter, sans-serif);
+  cursor: pointer;
+  transition:
+    background-color 0.22s ease,
+    color 0.22s ease,
+    box-shadow 0.22s ease,
+    transform 0.22s ease;
+  word-break: break-word;
+  text-align: left;
+}
+
+.portfolio-card:hover,
+.portfolio-card:focus-visible {
+  background-color: var(--btn-hover-bg, rgba(255,255,255,0.88));
+  color: var(--btn-hover-text, #1a1a1a);
+  border-color: var(--btn-hover-border-color, transparent);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  transform: scale(1.01);
+  outline: none;
+}
+
+.portfolio-card:focus-visible {
+  box-shadow: 0 0 0 3px var(--focus-ring, rgba(255,255,255,0.5));
+}
+
+.portfolio-card-img {
+  flex-shrink: 0;
+  width: 72px;
+  height: 72px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.portfolio-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.portfolio-card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.portfolio-card-title {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--btn-text, #1a1a1a);
+}
+
+.portfolio-card-desc {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--btn-text, #1a1a1a);
+  opacity: 0.8;
+}
+
+.portfolio-card-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 2px;
+}
+
+.portfolio-meta-stars,
+.portfolio-meta-lang {
+  font-size: 12px;
+  font-weight: 500;
+  opacity: 0.7;
+}
+
+.portfolio-card-chevron {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  align-self: center;
+  opacity: 0.45;
+  margin-left: auto;
+}
+
+.portfolio-card-chevron svg {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+  fill: none;
+}
+
+@media (max-width: 480px) {
+  .link-btn {
+    font-size: 14px;
+    padding: 13px 40px;
+  }
+  .link-btn-icon {
+    left: 12px;
+  }
+}
+
+/* ── Shop CSS variable defaults ──────────────────────────────────────────── */
+/* Themes can override these in their theme.css. Values below use existing     */
+/* button variables so the shop inherits the active theme automatically.       */
+:root {
+  --shop-tab-border:        rgba(255,255,255,0.15);
+  --shop-tab-color:         rgba(255,255,255,0.6);
+  --shop-tab-active-color:  #fff;
+  --shop-tab-active-border: var(--btn-bg, #fff);
+  --shop-card-bg:           var(--btn-bg, #fff);
+  --shop-card-border:       1px solid rgba(255,255,255,0.1);
+  --shop-card-radius:       var(--btn-radius, 12px);
+  --shop-card-shadow:       var(--btn-shadow, 0 2px 8px rgba(0,0,0,0.15));
+  --shop-card-shadow-hover: 0 6px 20px rgba(0,0,0,0.25);
+  --shop-image-bg:          rgba(0,0,0,0.1);
+  --shop-desc-color:        rgba(0,0,0,0.6);
+  --shop-price-color:       var(--btn-text, #1a1a1a);
+  --shop-price-original-color: rgba(0,0,0,0.4);
+  --shop-badge-bg:          rgba(255,210,60,0.92);
+  --shop-badge-color:       #1a1a1a;
+  --shop-grid-cols:         repeat(auto-fill, minmax(260px, 1fr));
+}
+
+
+/* ── FAQ Integration Widget ────────────────────────────────────────────────── */
+.integration-faq {
+  width: 100%;
+  max-width: var(--content-max-width, 640px);
+  margin: 2rem auto 0;
+}
+
+.integration-faq-heading {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: var(--btn-text, #1a1a1a);
+  text-align: center;
+  font-family: var(--font-family, Inter, sans-serif);
+}
+
+.integration-faq-item {
+  border: var(--btn-border-width, 0px) solid var(--btn-border-color, transparent);
+  border-radius: var(--btn-radius, 12px);
+  margin-bottom: 12px;
+  overflow: hidden;
+  background: var(--btn-bg, #fff);
+  box-shadow: var(--btn-shadow, 0 2px 8px rgba(0,0,0,0.15));
+  font-family: var(--font-family, Inter, sans-serif);
+  transition: background-color 0.22s ease, box-shadow 0.22s ease;
+}
+
+.integration-faq-item[open] {
+  background: var(--btn-hover-bg, rgba(255,255,255,0.88));
+}
+
+.integration-faq-question {
+  padding: 8px 16px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 15px;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 56px;
+  color: var(--btn-text, #1a1a1a);
+  font-family: var(--font-family, Inter, sans-serif);
+  user-select: none;
+}
+
+.integration-faq-question::-webkit-details-marker { display: none; }
+
+.integration-faq-question::after {
+  content: "+";
+  font-size: 1.2rem;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-left: 0.75rem;
+  opacity: 0.45;
+  transition: transform 0.2s ease;
+}
+
+.integration-faq-item[open] .integration-faq-question::after {
+  content: "−";
+}
+
+.integration-faq-answer {
+  padding: 0.75rem 1rem 0.85rem;
+  font-size: 0.9rem;
+  font-family: var(--font-family, Inter, sans-serif);
+  line-height: 1.6;
+  color: var(--btn-text, #1a1a1a);
+  border-top: 1px solid rgba(0,0,0,0.08);
+}
+
+/* ── Banner, hero, flip card — critical above-fold CSS ───────────────────────
+   Moved here from integrations.css so integrations.css can be async-loaded
+   without causing a flash of unstyled content on the hero / flip card.
+   ─────────────────────────────────────────────────────────────────────────── */
+
+/* Inner clip wrapper — sits around the <img>, NOT the avatar */
+.banner-img-wrap {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  display: block;
+}
+
+/* ── Full-bleed hero mode ── */
+.banner-img-wrap.banner-hero,
+.qr-flip-outer.banner-hero {
+  border-radius: 0;
+  align-self: flex-start;
+  width: var(--hero-w, 100vw);
+  aspect-ratio: var(--banner-aspect, 2/1);
+  margin-left: var(--hero-ml, calc(50% - 50vw));
+}
+
+.profile-banner-wrap:has(.banner-hero) {
+  border-radius: 0;
+}
+
+.banner-img-wrap.banner-hero img,
+.banner-img-wrap.banner-hero > a > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: var(--banner-obj-pos, top) center;
+  display: block;
+  border-radius: 0;
+}
+
+.qr-flip-outer.banner-hero .qr-flip-inner,
+.qr-flip-outer.banner-hero .qr-flip-front {
+  height: 100%;
+}
+.qr-flip-outer.banner-hero .qr-flip-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: var(--banner-obj-pos, top) center;
+}
+
+.qr-flip-outer.banner-hero,
+.qr-flip-outer.banner-hero .qr-flip-inner,
+.qr-flip-outer.banner-hero .qr-flip-front,
+.qr-flip-outer.banner-hero .qr-flip-back,
+.qr-flip-outer.banner-hero .qr-flip-front img {
+  border-radius: 0;
+}
+
+.banner-fade .banner-img-wrap.banner-hero::after,
+.qr-flip-outer.banner-hero.banner-fade .qr-flip-front::after {
+  border-radius: 0;
+}
+
+/* ── Banner parallax ── */
+.banner-parallax-clip > img,
+.banner-parallax-clip > a > img {
+  display: block;
+  width: 100%;
+  transform: translateY(var(--hb-parallax, 0px));
+  will-change: transform;
+  transition: none;
+}
+
+.qr-flip-outer.banner-parallax {
+  transform: translateY(var(--hb-parallax, 0px));
+  will-change: transform;
+}
+
+/* ── Banner fade overlays ── */
+.banner-fade .banner-img-wrap::after {
+  content: '';
+  position: absolute;
+  inset: 0;  /* full-size overlay avoids height:50% percentage resolution → eliminates CLS */
+  background: linear-gradient(to bottom, transparent 50%, var(--bg-color, #f5f5f5) 100%);
+  pointer-events: none;
+  z-index: 2;
+  border-radius: 0 0 16px 16px;
+}
+
+.banner-fade .banner-img-wrap.banner-hero::after {
+  border-radius: 0;
+}
+
+.qr-flip-outer.banner-fade .qr-flip-front {
+  position: relative;
+}
+.qr-flip-outer.banner-fade .qr-flip-front::after {
+  content: '';
+  position: absolute;
+  inset: 0;  /* full-size overlay avoids height:50% percentage resolution → eliminates CLS */
+  background: linear-gradient(to bottom, transparent 50%, var(--bg-color, #f5f5f5) 100%);
+  pointer-events: none;
+  z-index: 2;
+  border-radius: 0 0 16px 16px;
+}
+
+.qr-flip-outer.banner-hero.banner-fade .qr-flip-front::after {
+  border-radius: 0;
+}
+
+.qr-sidebyside-banner.banner-fade .banner-img-wrap::after {
+  border-radius: 0 0 16px 16px;
+}
+
+/* ── QR flip card ── */
+.qr-flip-outer {
+  position: relative;
+  width: 100%;
+  perspective: 1000px;
+  cursor: pointer;
+  border-radius: 16px;
+  margin-bottom: 48px;
+}
+
+.qr-flip-inner {
+  position: relative;
+  width: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.55s cubic-bezier(0.45, 0.05, 0.55, 0.95);
+  border-radius: 16px;
+}
+
+.qr-flip-outer.qr-flipped .qr-flip-inner {
+  transform: rotateY(180deg);
+}
+
+.qr-flip-front,
+.qr-flip-back {
+  border-radius: 16px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.qr-flip-front {
+  width: 100%;
+}
+
+.qr-flip-back {
+  position: absolute;
+  inset: 0;  /* avoids height:100% percentage resolution race → eliminates CLS */
+  visibility: hidden;  /* CLS: hidden elements excluded from shift measurement; flip JS restores visibility */
+  transform: rotateY(180deg);
+  background: var(--btn-bg, #fff);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+  box-shadow: var(--btn-shadow, 0 2px 8px rgba(0,0,0,0.15));
+}
+
+.qr-flip-outer.qr-flipped .qr-flip-back {
+  visibility: visible;
+}
+
+.qr-flip-back .hb-qr-svg svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.qr-flip-back .hb-qr-url {
+  font-size: 0.78rem;
+  font-family: var(--font-family, Inter, sans-serif);
+  color: var(--btn-text, #1a1a1a);
+  opacity: 0.5;
+  text-align: center;
+  margin: 0;
+}
+
+.qr-flip-hint {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0,0,0,0.55);
+  color: #fff;
+  font-size: 11px;
+  font-family: var(--font-family, Inter, sans-serif);
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 6px;
+  line-height: 1.4;
+  pointer-events: none;
+  letter-spacing: 0.01em;
+  z-index: 2;
+}
+
+.qr-flip-close-hint {
+  font-size: 0.72rem;
+  font-family: var(--font-family, Inter, sans-serif);
+  color: var(--btn-text, #1a1a1a);
+  opacity: 0.45;
+  text-align: center;
+  margin: 0;
+}
+
+.qr-flip-outer .avatar-over-banner {
+  z-index: 3;
+}
+
+/* ── QR badge overlay — above fold in badge mode ── */
+.hb-qr-badge {
+  position: absolute;
+  z-index: 2;
+  background: rgba(255,255,255,0.92);
+  border-radius: 8px;
+  padding: 4px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  line-height: 0;
+}
+.hb-qr-badge svg { display: block; }
+.hb-qr-badge--bottom-right { bottom: 10px; right: 10px; }
+.hb-qr-badge--bottom-left  { bottom: 10px; left:  10px; }
+.hb-qr-badge--top-right    { top:    10px; right: 10px; }
+.hb-qr-badge--top-left     { top:    10px; left:  10px; }
+
+/* ── QR side-by-side row — above fold in sidebyside mode ── */
+.qr-sidebyside-row {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  margin-bottom: 48px;
+}
+
+.qr-sidebyside-banner {
+  flex: 1;
+  min-width: 0;
+  position: relative;
+}
+
+.qr-sidebyside-banner img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.qr-sidebyside-banner .avatar-over-banner {
+  bottom: -36px;
+}
+
+.qr-sidebyside-qr {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.qr-sidebyside-qr .hb-widget-qr-code {
+  margin-bottom: 0;
+  width: 100%;
+}
+
+@media (min-width: 560px) {
+  .qr-sidebyside-row {
+    flex-direction: row;
+    align-items: stretch;
+  }
+  .qr-sidebyside-banner { flex: 1 1 60%; }
+  .qr-sidebyside-qr     { flex: 0 0 36%; }
+  .qr-sidebyside-banner .avatar-over-banner {
+    bottom: -36px;
+  }
+}

@@ -1,0 +1,627 @@
+/* ─────────────────────────────────────────────────────────────────────────
+   integrations.css — shared widget chrome for Homebase integrations
+   Loaded only when at least one interactive integration widget is enabled.
+   All colors use CSS variables so themes apply automatically.
+   ───────────────────────────────────────────────────────────────────────── */
+
+/* ── Widget container ─────────────────────────────────────────────────────── */
+.hb-widget {
+  width: 100%;
+  border-radius: var(--card-radius, 16px);
+  border: 1px solid var(--color-border, rgba(255,255,255,0.12));
+  background: var(--color-card-bg, rgba(255,255,255,0.08));
+  padding: 24px 20px;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.hb-widget-heading {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-text, #fff);
+  margin-bottom: 4px;
+  text-align: center;
+}
+
+/* ── Banner fade + parallax + full-bleed hero ─────────────────────────────── */
+/* MOVED TO base.css — .banner-img-wrap, hero mode, parallax, fade overlays,   */
+/* and QR flip/badge/sidebyside are in base.css so integrations.css can be     */
+/* async-loaded without flashing unstyled above-fold content.                  */
+
+.hb-widget-subheading {
+  font-size: 0.875rem;
+  color: var(--color-text-muted, rgba(255,255,255,0.7));
+  margin-bottom: 16px;
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* ── Form controls ────────────────────────────────────────────────────────── */
+.hb-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.hb-form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.hb-input,
+.hb-textarea,
+.hb-select {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: var(--input-radius, 10px);
+  border: 1px solid var(--color-border, rgba(255,255,255,0.2));
+  background: var(--color-input-bg, rgba(255,255,255,0.1));
+  color: var(--color-text, #fff);
+  font-size: 0.9rem;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.18s ease, background 0.18s ease;
+}
+
+.hb-input::placeholder,
+.hb-textarea::placeholder {
+  color: var(--color-text-muted, rgba(255,255,255,0.45));
+}
+
+.hb-input:focus,
+.hb-textarea:focus {
+  border-color: var(--color-accent, rgba(255,255,255,0.5));
+  background: var(--color-input-bg-focus, rgba(255,255,255,0.15));
+}
+
+.hb-textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* ── Primary button ───────────────────────────────────────────────────────── */
+.hb-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 22px;
+  border-radius: var(--btn-radius, 10px);
+  border: none;
+  background: var(--color-btn-bg, rgba(255,255,255,0.9));
+  color: var(--color-btn-text, #1a1a2e);
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  text-decoration: none;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+  white-space: nowrap;
+}
+
+.hb-btn:hover     { opacity: 0.88; transform: translateY(-1px); }
+.hb-btn:active    { transform: translateY(0); }
+.hb-btn:disabled  { opacity: 0.5; cursor: not-allowed; transform: none; }
+.hb-btn-full      { width: 100%; justify-content: center; }
+
+.hb-btn-outline {
+  background: transparent;
+  border: 1px solid var(--color-border, rgba(255,255,255,0.3));
+  color: var(--color-text, #fff);
+}
+
+/* ── Social follow buttons ────────────────────────────────────────────────── */
+.hb-social-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.hb-btn-social {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 18px;
+  border-radius: var(--btn-radius, 10px);
+  border: 1px solid var(--color-border, rgba(255,255,255,0.15));
+  background: var(--color-card-bg, rgba(255,255,255,0.08));
+  color: var(--color-text, #fff);
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: inherit;
+  text-decoration: none;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+  width: 100%;
+}
+
+.hb-btn-social:hover { opacity: 0.85; transform: translateY(-1px); }
+
+.hb-btn-social-icon {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+}
+
+.hb-btn-social-icon svg {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+}
+
+.hb-btn-social-label { flex: 1; }
+
+.hb-btn-social-count {
+  font-size: 0.8rem;
+  opacity: 0.65;
+}
+
+/* ── Support / monetization buttons ──────────────────────────────────────── */
+.hb-support-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.hb-btn-support {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: var(--btn-radius, 10px);
+  border: 1px solid var(--color-border, rgba(255,255,255,0.2));
+  background: var(--color-card-bg, rgba(255,255,255,0.08));
+  color: var(--color-text, #fff);
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-family: inherit;
+  text-decoration: none;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+  white-space: nowrap;
+}
+
+.hb-btn-support:hover { opacity: 0.85; transform: translateY(-1px); }
+
+.hb-btn-support svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
+/* ── Social proof counters ────────────────────────────────────────────────── */
+.hb-counters-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+.hb-counter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 14px 20px;
+  border-radius: var(--card-radius, 12px);
+  border: 1px solid var(--color-border, rgba(255,255,255,0.12));
+  background: var(--color-card-bg, rgba(255,255,255,0.06));
+  min-width: 110px;
+  flex: 1;
+}
+
+.hb-counter-value {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--color-text, #fff);
+  line-height: 1;
+}
+
+.hb-counter-label {
+  font-size: 0.75rem;
+  color: var(--color-text-muted, rgba(255,255,255,0.6));
+  text-align: center;
+  line-height: 1.3;
+}
+
+/* ── Poll options ─────────────────────────────────────────────────────────── */
+.hb-poll-options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.hb-poll-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: var(--card-radius, 10px);
+  border: 1px solid var(--color-border, rgba(255,255,255,0.2));
+  background: var(--color-card-bg, rgba(255,255,255,0.06));
+  cursor: pointer;
+  transition: border-color 0.18s ease, background 0.18s ease;
+  user-select: none;
+}
+
+.hb-poll-option:hover {
+  border-color: var(--color-accent, rgba(255,255,255,0.4));
+  background: var(--color-card-bg-hover, rgba(255,255,255,0.12));
+}
+
+.hb-poll-option input[type="radio"] {
+  accent-color: var(--color-btn-bg, #fff);
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.hb-poll-option-label {
+  font-size: 0.9rem;
+  color: var(--color-text, #fff);
+  cursor: pointer;
+}
+
+/* ── Badges ───────────────────────────────────────────────────────────────── */
+.hb-badges-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+}
+
+.hb-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.hb-badge img {
+  max-height: 80px;
+  width: auto;
+  border-radius: 8px;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.hb-badge:hover img {
+  opacity: 0.88;
+  transform: translateY(-2px);
+}
+
+/* ── Testimonials ─────────────────────────────────────────────────────────── */
+.hb-testimonials-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.hb-testimonial {
+  padding: 16px;
+  border-radius: var(--card-radius, 12px);
+  border: 1px solid var(--color-border, rgba(255,255,255,0.12));
+  background: var(--color-card-bg, rgba(255,255,255,0.06));
+}
+
+.hb-testimonial-quote {
+  font-size: 0.9rem;
+  color: var(--color-text, #fff);
+  margin-bottom: 10px;
+  font-style: italic;
+  line-height: 1.55;
+}
+
+.hb-testimonial-quote::before { content: '\201C'; }
+.hb-testimonial-quote::after  { content: '\201D'; }
+
+.hb-testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.hb-testimonial-author-name {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--color-text, #fff);
+  text-decoration: none;
+}
+
+.hb-testimonial-author-name:hover { opacity: 0.8; }
+
+.hb-testimonial-author-handle {
+  font-size: 0.78rem;
+  color: var(--color-text-muted, rgba(255,255,255,0.55));
+}
+
+/* ── Lead magnet ──────────────────────────────────────────────────────────── */
+.hb-lead-magnet-img {
+  width: 100%;
+  max-width: 280px;
+  margin: 0 auto 16px;
+  display: block;
+  border-radius: 10px;
+}
+
+.hb-resource-link {
+  display: none;
+  text-align: center;
+  margin-top: 14px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-btn-bg, #fff);
+  text-decoration: underline;
+}
+
+/* ── Code embeds ──────────────────────────────────────────────────────────── */
+.hb-code-embeds-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.hb-code-embed {
+  border-radius: var(--card-radius, 12px);
+  overflow: hidden;
+  border: 1px solid var(--color-border, rgba(255,255,255,0.12));
+}
+
+.hb-code-embed-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text, #fff);
+  margin-bottom: 8px;
+}
+
+.hb-code-embed iframe {
+  width: 100%;
+  border: none;
+  display: block;
+}
+
+/* ── Booking embed ────────────────────────────────────────────────────────── */
+.hb-booking-embed {
+  width: 100%;
+  border: none;
+  border-radius: var(--card-radius, 12px);
+  display: block;
+  min-height: 400px;
+}
+
+/* ── Discord embed ────────────────────────────────────────────────────────── */
+.hb-discord-embed {
+  width: 100%;
+  border: none;
+  border-radius: var(--card-radius, 12px);
+  display: block;
+  min-height: 200px;
+}
+
+/* ── Status states ────────────────────────────────────────────────────────── */
+.hb-msg {
+  min-height: 1.2em;
+  font-size: 0.85rem;
+  text-align: center;
+  margin-top: 8px;
+  color: var(--color-text-muted, rgba(255,255,255,0.65));
+  transition: color 0.2s ease;
+}
+
+.hb-state-success .hb-msg { color: var(--color-success, #6fcf97); }
+.hb-state-error   .hb-msg { color: var(--color-error,   #eb5757); }
+
+.hb-state-loading .hb-btn[type="submit"]::after {
+  content: '';
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border: 2px solid currentColor;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: hb-spin 0.6s linear infinite;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+@keyframes hb-spin { to { transform: rotate(360deg); } }
+
+.hb-state-success form { display: none; }
+
+/* ── QR Code widget ───────────────────────────────────────────────────────── */
+.hb-widget-qr-code {
+  background: var(--btn-bg, #fff);
+  border: var(--btn-border-width, 0px) solid var(--btn-border-color, transparent);
+  border-radius: var(--btn-radius, 12px);
+  box-shadow: var(--btn-shadow, 0 2px 8px rgba(0,0,0,0.15));
+  padding: 20px 20px 16px;
+}
+
+.hb-widget-qr-code .hb-widget-heading {
+  color: var(--btn-text, #1a1a1a);
+  font-family: var(--font-family, Inter, sans-serif);
+  margin-bottom: 12px;
+}
+
+.hb-qr-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.hb-qr-svg {
+  line-height: 0;
+}
+
+.hb-qr-svg svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.hb-qr-label {
+  font-size: 0.9rem;
+  font-family: var(--font-family, Inter, sans-serif);
+  color: var(--btn-text, #1a1a1a);
+  text-align: center;
+  margin: 0;
+}
+
+.hb-qr-url {
+  font-size: 0.78rem;
+  font-family: var(--font-family, Inter, sans-serif);
+  color: var(--btn-text, #1a1a1a);
+  opacity: 0.5;
+  text-align: center;
+  margin: 0;
+}
+
+.hb-qr-download {
+  font-size: 14px !important;
+  min-height: 44px !important;
+  padding: 8px 20px !important;
+  width: auto !important;
+  display: inline-flex !important;
+  text-decoration: none;
+}
+
+/* ── QR compact mode ──────────────────────────────────────────────────────── */
+.hb-widget-qr-code--compact {
+  padding: 12px 16px;
+}
+.hb-widget-qr-code--compact .hb-qr-inner {
+  gap: 6px;
+}
+.hb-widget-qr-code--compact .hb-qr-url {
+  font-size: 0.72rem;
+}
+
+/* ── QR flip card — MOVED TO base.css ─────────────────────────────────────── */
+
+/* ── QR sticky floating button ────────────────────────────────────────────── */
+.hb-qr-sticky-btn {
+  position: fixed;
+  z-index: 9000;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 16px;
+  background: var(--btn-bg, #fff);
+  color: var(--btn-text, #1a1a1a);
+  font-family: var(--font-family, Inter, sans-serif);
+  font-size: 13px;
+  font-weight: 600;
+  border: none;
+  border-radius: 999px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.22);
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+  white-space: nowrap;
+}
+.hb-qr-sticky-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.28);
+}
+.hb-qr-sticky-btn--bottom-right { bottom: 24px; right: 24px; }
+.hb-qr-sticky-btn--bottom-left  { bottom: 24px; left:  24px; }
+
+/* ── QR modal overlay ─────────────────────────────────────────────────────── */
+.hb-qr-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9100;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.65);
+  padding: 24px;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+.hb-qr-modal.hb-qr-modal--open {
+  display: flex;
+}
+
+.hb-qr-modal-inner {
+  background: var(--btn-bg, #fff);
+  border-radius: var(--btn-radius, 12px);
+  box-shadow: 0 8px 40px rgba(0,0,0,0.35);
+  padding: 28px 24px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  max-width: 380px;
+  width: 100%;
+  position: relative;
+}
+
+.hb-qr-modal-close {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  background: none;
+  border: none;
+  font-size: 22px;
+  line-height: 1;
+  color: var(--btn-text, #1a1a1a);
+  opacity: 0.4;
+  cursor: pointer;
+  padding: 4px;
+  transition: opacity 0.15s;
+}
+.hb-qr-modal-close:hover { opacity: 0.8; }
+
+.hb-qr-modal-heading {
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: var(--font-family, Inter, sans-serif);
+  color: var(--btn-text, #1a1a1a);
+  text-align: center;
+  margin: 0;
+}
+
+.hb-qr-modal-url {
+  font-size: 0.75rem;
+  font-family: var(--font-family, Inter, sans-serif);
+  color: var(--btn-text, #1a1a1a);
+  opacity: 0.45;
+  text-align: center;
+  margin: 0;
+}
+
+/* ── QR badge overlay on hero — MOVED TO base.css ─────────────────────────── */
+
+/* ── QR side-by-side row — MOVED TO base.css ──────────────────────────────── */
+
+
+.hb-privacy-note {
+  font-size: 0.75rem;
+  color: var(--color-text-muted, rgba(255,255,255,0.45));
+  text-align: center;
+  margin-top: 8px;
+  line-height: 1.4;
+}
+
+/* ── Responsive ───────────────────────────────────────────────────────────── */
+@media (min-width: 480px) {
+  .hb-form-row {
+    flex-direction: row;
+  }
+
+  .hb-testimonials-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .hb-counter {
+    flex: 0 1 auto;
+  }
+}
